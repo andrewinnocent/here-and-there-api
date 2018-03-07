@@ -1,12 +1,12 @@
 #!/bin/bash
 
-curl "http://localhost:4741/journal_entries/${ID}" \
+curl "http://localhost:4741/journals" \
   --include \
-  --request PATCH \
-  --header "Authorization: Token token=${TOKEN}" \
+  --request POST \
   --header "Content-Type: application/json" \
+  --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "journal_entry": {
+    "journal": {
       "state": "'"${STATE}"'",
       "location_name": "'"${LOCATION_NAME}"'",
       "rating": "'"${RATING}"'",

@@ -1,7 +1,6 @@
-# USELESS! Can't create new entries.
-class CreateJournalEntries < ActiveRecord::Migration[5.1]
+class CreateJournals < ActiveRecord::Migration[5.1]
   def change
-    create_table :journal_entries do |t|
+    create_table :journals do |t|
       t.text :state
       t.text :location_name
       t.integer :rating
