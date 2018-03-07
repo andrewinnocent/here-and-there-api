@@ -1,5 +1,5 @@
 class JournalEntriesController < ApplicationController
-  before_action :set_journal_entry, only: [:show, :update, :destroy]
+  before_action :set_journal_entry, only: %i[show update destroy]
 
   # GET /journal_entries
   def index
