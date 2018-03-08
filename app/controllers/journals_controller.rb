@@ -1,4 +1,4 @@
-class JournalsController < ApplicationController
+class JournalsController < OpenReadController
   before_action :set_journal, only: %i[show update destroy]
 
   # GET /journals
@@ -15,7 +15,7 @@ class JournalsController < ApplicationController
 
   # POST /journals
   def create
-    @journal = Journal.new(journal_params)
+    @journal = current_user.journals.build(journal_params)
 
     if @journal.save
       render json: @journal, status: :created, location: @journal
