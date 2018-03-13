@@ -1,4 +1,4 @@
-class JournalsController < OpenReadController
+class JournalsController < ProtectedController
   before_action :set_journal, only: %i[show update destroy]
 
   # GET /journals
