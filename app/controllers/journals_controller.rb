@@ -41,7 +41,7 @@ class JournalsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_journal
-      @journal = Journal.find(params[:id])
+      @journal = current_user.journals.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
