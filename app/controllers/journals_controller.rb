@@ -10,6 +10,8 @@ class JournalsController < ProtectedController
 
   # GET /journals/1
   def show
+    @journal = current_user.journals.all
+
     render json: @journal
   end
 
