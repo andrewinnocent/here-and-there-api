@@ -3,15 +3,13 @@ class JournalsController < ProtectedController
 
   # GET /journals
   def index
-    @journals = Journal.all
+    @journals = current_user.journals.all
 
     render json: @journals
   end
 
   # GET /journals/1
   def show
-    @journal = current_user.journals.all
-
     render json: @journal
   end
 
